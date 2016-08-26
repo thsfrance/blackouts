@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace blackoutsLibManager\Http\Controllers\Auth;
 
-use App\User;
+use blackoutsLibManager\User;
 use Validator;
-use App\Http\Controllers\Controller;
+use blackoutsLibManager\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller

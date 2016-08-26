@@ -11,6 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Auth::routes();
+
+//Route::get('/logout',function(){
+//    Auth::logout();
+//    return redirect('/');
+//});
+
+Route::get("/logout",'Auth\LoginController@logout');
+
+Route::get('/', 'LivroController@lista');
+
+Route::get('/home', 'LivroController@lista');

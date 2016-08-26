@@ -77,7 +77,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'pt_br',
 
     /*
     |--------------------------------------------------------------------------
@@ -90,7 +90,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'pt_br',
 
     /*
     |--------------------------------------------------------------------------
@@ -172,11 +172,11 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        blackoutsLibManager\Providers\AppServiceProvider::class,
+        // blackoutsLibManager\Providers\BroadcastServiceProvider::class,
+        blackoutsLibManager\Providers\AuthServiceProvider::class,
+        blackoutsLibManager\Providers\EventServiceProvider::class,
+        blackoutsLibManager\Providers\RouteServiceProvider::class,
 
     ],
 

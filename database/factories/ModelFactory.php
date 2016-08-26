@@ -11,7 +11,7 @@
 |
 */
 
-$factory->define(App\User::class, function (Faker\Generator $faker) {
+$factory->define(blackoutsLibManager\User::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
