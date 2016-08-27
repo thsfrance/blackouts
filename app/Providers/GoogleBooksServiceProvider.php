@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
 
-class GoogleBooks {
+class GoogleBooksServiceProvider {
 
     protected $client;
 
@@ -24,25 +24,27 @@ class GoogleBooks {
           $this->client->setAccessToken(Cache::get('service_token'));
         }
 
-        $key = file_get_contents($key_file_location);
+        $key = json_decode(file_get_contents($key_file_location),true);
         /* Add the scopes you need */
         $scopes = array('https://www.googleapis.com/auth/books');
-        $cred = new \Google_Auth_AssertionCredentials(
+        $cred = array(
             $service_account_name,
             $scopes,
             $key
         );
+        
+      //  var_dump($key); exit;
 
-        $this->client->setAssertionCredentials($cred);
-        if ($this->client->getAuth()->isAccessTokenExpired()) {
-          $this->client->getAuth()->refreshTokenWithAssertion($cred);
-        }
-        Cache::forever('service_token', $this->client->getAccessToken());
+        $this->client->setAuthConfig($key);
+       
+        //Cache::forever('service_token', $this->client->getAccessToken());
     }
 
-    public function get($calendarId)
+    public function get()
     {
-        $results = $this->service->bookshelves;
-        dd($results);
+        echo("<pre>");
+        var_dump($this->service->);
+        echo("</pre>");
+        //dd($results);
     }
 }

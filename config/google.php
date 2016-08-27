@@ -30,5 +30,5 @@ return [
     | This is the location of the .p12 file from the Laravel root directory
     |
     */
-    'key_file_location' => '/resources/assets/blackouts-1a871d1ec0ae.p12',
+    'key_file_location' => '/resources/assets/book.json',
 ];
