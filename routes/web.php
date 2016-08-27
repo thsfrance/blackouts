@@ -23,3 +23,9 @@ Route::get("/logout",'Auth\LoginController@logout');
 Route::get('/', 'LivroController@lista');
 
 Route::get('/home', 'LivroController@lista');
+
+Route::get('/login', 'LivroController@lista');
+
+Route::get('/livros/novo', 'LivroController@novo');
+
+Route::get('/api','LivroController@api');

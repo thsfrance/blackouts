@@ -8,11 +8,12 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Laravel</title>
+    <title>BlackOuts</title>
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
     <link href="/css/foundation.css" rel="stylesheet">
+    <link href="/css/foundation-icons.css" rel="stylesheet">
 
     <!-- Scripts -->
     <script>
@@ -24,8 +25,9 @@
 <body>
     
     <div class="top-bar">
+        <div class="">
         <div class="top-bar-left">
-            <h3>BlackOuts</h3><span>Library Manager</span>
+            <div class="title"><h3>BlackOuts</h3><span>Library Manager</span></div>
         </div>
         <div class="top-bar-right">
             @if(Auth::guest())
@@ -48,7 +50,7 @@
                             @endif
                         </div>
                     </li>
-                    <li><button type="submit" class="button">Entrar</button></li>
+                    <li><button type="submit" class="button secondary"><i class="fi-arrow-right"></i> Entrar</button></li>
                 </ul>
             </form>
             @else
@@ -56,17 +58,38 @@
                     <li>
                         <a href="#">{{Auth::user()->name}}</a>
                         <ul class="menu">
-                            <li><a href="{{url('/logout')}}">Loug Out</a></li>
+                            <li><a href="{{url('/logout')}}">Log Out</a></li>
                         </ul>
                     </li>
                 </ul>
             @endif
         </div>
+        </div>
     </div>
-
-    @yield('content')
-
+    <div class="container">
+    @if(!@Auth::guest())
+            <ul class="dropdown menu top-bar" data-dropdown-menu>
+                <li>
+                  <a href="#">Livros</a>
+                  <ul class="menu">
+                    <li><a href="">Consultar</a></li>
+                    <li><a href="{{action('LivroController@novo')}}">Cadastrar</a></li>
+                  </ul>
+                </li>
+                <li>
+                    <a href="#">Usuários</a>
+                    <ul class="menu">
+                        <li><a href="{{url('/register')}}">Cadastrar</a></li>
+                    </ul>
+                </li>
+            </ul>
+    @endif
+    </div>
+    <div class='row'>
+        @yield('content')
+    </div>
     <!-- Scripts -->
+    <script src="https://www.googleapis.com/books/v1/volumes?q=harry+potter&callback=handleResponse"></script>
     <script src="/js/vendor/jquery.js"></script>
     <script src="/js/vendor/what-input.js"></script>
     <script src="/js/vendor/foundation.js"></script>

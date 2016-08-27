@@ -12,4 +12,8 @@ class LivroController extends Controller
         
         return view('livros.lista');
     }
+    
+    public function novo(){
+        return view('livros.formulario');
+    }
 }

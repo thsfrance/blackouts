@@ -1,4 +1,4 @@
 @extends('layouts.blackouts')
-@section('content')
-    
+@section ('content')
+
 @stop

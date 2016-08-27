@@ -100,6 +100,7 @@ return [
         
         'password' => [
             'required' => 'Digite uma senha',
+            'confirmed' => 'As senhas não combinam'
         ],
     ],
 
