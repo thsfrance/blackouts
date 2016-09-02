@@ -42,3 +42,7 @@
     margin: 0px;
 }
 
+table th {
+    text-align: left;
+}
+

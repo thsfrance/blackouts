@@ -28,4 +28,4 @@ Route::get('/login', 'LivroController@lista');
 
 Route::get('/livros/novo', 'LivroController@novo');
 
-Route::get('/api','LivroController@api');
+Route::get('/users/lista','User\UserController@lista');

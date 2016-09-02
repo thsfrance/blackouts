@@ -89,7 +89,7 @@
         @yield('content')
     </div>
     <!-- Scripts -->
-    <script src="https://www.googleapis.com/books/v1/volumes?q=harry+potter&callback=handleResponse"></script>
+    <script src="/js/vendor/angular.js"></script>
     <script src="/js/vendor/jquery.js"></script>
     <script src="/js/vendor/what-input.js"></script>
     <script src="/js/vendor/foundation.js"></script>
